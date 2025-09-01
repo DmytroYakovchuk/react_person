@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { Person } from './components/Person/Person';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+export const misha = {
+  name: 'Misha',
+  age: 37,
+  sex: 'm',
+  isMarried: true,
+  partnerName: 'Natasha',
+};
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+export const olya = {
+  name: 'Olya',
+  sex: 'f',
+  isMarried: true,
+  partnerName: 'Maksym',
+};
 
-export default App
+export const alex = {
+  name: 'Alex',
+  age: 25,
+  sex: 'm',
+  isMarried: false,
+};
+
+export const App = () => (
+  <div className="App">
+    <Person person={misha} />
+    <Person person={olya} />
+    <Person person={alex} />
+  </div>
+);
+
+export default App;
